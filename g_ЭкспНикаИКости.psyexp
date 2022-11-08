@@ -76,7 +76,7 @@
         <Param name="stopType" updates="None" val="duration (s)" valType="str"/>
         <Param name="stopVal" updates="constant" val="" valType="code"/>
         <Param name="syncScreenRefresh" updates="None" val="True" valType="bool"/>
-        <Param name="text" updates="constant" val="Максимально сконцентрируйтесь!" valType="str"/>
+        <Param name="text" updates="constant" val="Максимально сконцентрируйтесь!&amp;#10;&amp;#10;Нажмите пробел, чтобы продолжить" valType="str"/>
         <Param name="units" updates="None" val="from exp settings" valType="str"/>
         <Param name="wrapWidth" updates="constant" val="" valType="num"/>
       </TextComponent>
@@ -121,7 +121,7 @@
         <Param name="stopType" updates="None" val="duration (s)" valType="str"/>
         <Param name="stopVal" updates="constant" val="" valType="code"/>
         <Param name="syncScreenRefresh" updates="None" val="True" valType="bool"/>
-        <Param name="text" updates="constant" val="Сейчас вам будет прочитан текст. Вам необходимо будет вслушаться и запомнить информацию оттуда.&amp;#10;Затем вам будут заданы вопросы в формате правда/ложь.&amp;#10;&amp;#10;Нажмите пробел, чтобы послушать запись :)))" valType="str"/>
+        <Param name="text" updates="constant" val="Сейчас вам будет показано изображение механизма. Затем вам будет прочитан текст. Вам необходимо будет вслушаться и запомнить информацию оттуда.&amp;#10;Затем вам будут заданы вопросы в формате правда/ложь.&amp;#10;&amp;#10;Нажмите пробел, чтобы начать :)))" valType="str"/>
         <Param name="units" updates="None" val="from exp settings" valType="str"/>
         <Param name="wrapWidth" updates="constant" val="" valType="num"/>
       </TextComponent>
@@ -275,6 +275,33 @@
         <Param name="storeCorrect" updates="constant" val="False" valType="bool"/>
         <Param name="syncScreenRefresh" updates="constant" val="True" valType="bool"/>
       </KeyboardComponent>
+      <TextComponent name="start_space">
+        <Param name="color" updates="constant" val="white" valType="color"/>
+        <Param name="colorSpace" updates="constant" val="rgb" valType="str"/>
+        <Param name="contrast" updates="constant" val="1" valType="num"/>
+        <Param name="disabled" updates="None" val="False" valType="bool"/>
+        <Param name="durationEstim" updates="None" val="" valType="code"/>
+        <Param name="flip" updates="constant" val="None" valType="str"/>
+        <Param name="font" updates="constant" val="Open Sans" valType="str"/>
+        <Param name="languageStyle" updates="None" val="LTR" valType="str"/>
+        <Param name="letterHeight" updates="constant" val="0.05" valType="num"/>
+        <Param name="name" updates="None" val="start_space" valType="code"/>
+        <Param name="opacity" updates="constant" val="" valType="num"/>
+        <Param name="ori" updates="constant" val="0" valType="num"/>
+        <Param name="pos" updates="constant" val="(0, 0)" valType="list"/>
+        <Param name="saveStartStop" updates="None" val="True" valType="bool"/>
+        <Param name="startEstim" updates="None" val="" valType="code"/>
+        <Param name="startType" updates="None" val="time (s)" valType="str"/>
+        <Param name="startVal" updates="None" val="128.0" valType="code"/>
+        <Param name="stopType" updates="None" val="duration (s)" valType="str"/>
+        <Param name="stopVal" updates="constant" val="" valType="code"/>
+        <Param name="syncScreenRefresh" updates="None" val="True" valType="bool"/>
+        <Param name="text" updates="constant" val="Нажмите пробел, чтобы перейти к вопросам&amp;#10;&amp;#10;A — правда              L — ложь" valType="str"/>
+        <Param name="units" updates="None" val="from exp settings" valType="str"/>
+        <Param name="wrapWidth" updates="constant" val="" valType="num"/>
+      </TextComponent>
+    </Routine>
+    <Routine name="Gif">
       <MovieComponent name="movie">
         <Param name="No audio" updates="None" val="False" valType="bool"/>
         <Param name="backend" updates="None" val="moviepy" valType="str"/>
@@ -294,7 +321,7 @@
         <Param name="startType" updates="None" val="time (s)" valType="str"/>
         <Param name="startVal" updates="None" val="0.0" valType="code"/>
         <Param name="stopType" updates="None" val="duration (s)" valType="str"/>
-        <Param name="stopVal" updates="constant" val="128.0" valType="code"/>
+        <Param name="stopVal" updates="constant" val="30.0" valType="code"/>
         <Param name="syncScreenRefresh" updates="None" val="True" valType="bool"/>
         <Param name="units" updates="None" val="from exp settings" valType="str"/>
       </MovieComponent>
@@ -302,6 +329,7 @@
   </Routines>
   <Flow>
     <Routine name="Hello"/>
+    <Routine name="Gif"/>
     <Routine name="trial"/>
     <Routine name="Audio"/>
     <LoopInitiator loopType="TrialHandler" name="trials">
